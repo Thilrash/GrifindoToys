@@ -37,5 +37,7 @@ namespace GrifindoToys
         public DateTime? EndDate { get; set; }
 
         public int? NoOfLeaves { get; set; }
+
+        public int? OverTimeHours { get; set; }
     }
 }

@@ -37,6 +37,12 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnRefreshTable = new System.Windows.Forms.Button();
             this.dgvEmployeeDataTable = new System.Windows.Forms.DataGridView();
+            this.btnSearchEmployee = new System.Windows.Forms.Button();
+            this.btnView = new System.Windows.Forms.Button();
+            this.txtSearchEmployee = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.EmployeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MonthlySalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,12 +56,7 @@
             this.BeginDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NoOfLeaves = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSearchEmployee = new System.Windows.Forms.Button();
-            this.btnView = new System.Windows.Forms.Button();
-            this.txtSearchEmployee = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.OverTimeHours = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeDataTable)).BeginInit();
@@ -111,6 +112,7 @@
             this.btnSalaryCalculation.TabIndex = 10;
             this.btnSalaryCalculation.Text = "Salary Calculation";
             this.btnSalaryCalculation.UseVisualStyleBackColor = true;
+            this.btnSalaryCalculation.Click += new System.EventHandler(this.btnSalaryCalculation_Click);
             // 
             // btnRegister
             // 
@@ -168,7 +170,8 @@
             this.DateRange,
             this.BeginDate,
             this.EndDate,
-            this.NoOfLeaves});
+            this.NoOfLeaves,
+            this.OverTimeHours});
             this.dgvEmployeeDataTable.Location = new System.Drawing.Point(27, 104);
             this.dgvEmployeeDataTable.Name = "dgvEmployeeDataTable";
             this.dgvEmployeeDataTable.ReadOnly = true;
@@ -178,6 +181,62 @@
             this.dgvEmployeeDataTable.TabIndex = 10;
             this.dgvEmployeeDataTable.Click += new System.EventHandler(this.dgvEmployeeDataTable_Click);
             this.dgvEmployeeDataTable.DoubleClick += new System.EventHandler(this.dgvEmployeeDataTable_DoubleClick);
+            // 
+            // btnSearchEmployee
+            // 
+            this.btnSearchEmployee.Location = new System.Drawing.Point(267, 56);
+            this.btnSearchEmployee.Name = "btnSearchEmployee";
+            this.btnSearchEmployee.Size = new System.Drawing.Size(141, 35);
+            this.btnSearchEmployee.TabIndex = 9;
+            this.btnSearchEmployee.Text = "Search";
+            this.btnSearchEmployee.UseVisualStyleBackColor = true;
+            this.btnSearchEmployee.Click += new System.EventHandler(this.btnSearchEmployee_Click);
+            // 
+            // btnView
+            // 
+            this.btnView.Location = new System.Drawing.Point(213, 437);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(141, 33);
+            this.btnView.TabIndex = 7;
+            this.btnView.Text = "View";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            // 
+            // txtSearchEmployee
+            // 
+            this.txtSearchEmployee.Location = new System.Drawing.Point(27, 61);
+            this.txtSearchEmployee.Name = "txtSearchEmployee";
+            this.txtSearchEmployee.Size = new System.Drawing.Size(234, 24);
+            this.txtSearchEmployee.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 18);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Search employee";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(560, 437);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(141, 33);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(387, 437);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(141, 33);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // EmployeeId
             // 
@@ -305,61 +364,15 @@
             this.NoOfLeaves.Visible = false;
             this.NoOfLeaves.Width = 125;
             // 
-            // btnSearchEmployee
+            // OverTimeHours
             // 
-            this.btnSearchEmployee.Location = new System.Drawing.Point(267, 56);
-            this.btnSearchEmployee.Name = "btnSearchEmployee";
-            this.btnSearchEmployee.Size = new System.Drawing.Size(141, 35);
-            this.btnSearchEmployee.TabIndex = 9;
-            this.btnSearchEmployee.Text = "Search";
-            this.btnSearchEmployee.UseVisualStyleBackColor = true;
-            this.btnSearchEmployee.Click += new System.EventHandler(this.btnSearchEmployee_Click);
-            // 
-            // btnView
-            // 
-            this.btnView.Location = new System.Drawing.Point(213, 437);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(141, 33);
-            this.btnView.TabIndex = 7;
-            this.btnView.Text = "View";
-            this.btnView.UseVisualStyleBackColor = true;
-            // 
-            // txtSearchEmployee
-            // 
-            this.txtSearchEmployee.Location = new System.Drawing.Point(27, 61);
-            this.txtSearchEmployee.Name = "txtSearchEmployee";
-            this.txtSearchEmployee.Size = new System.Drawing.Size(234, 24);
-            this.txtSearchEmployee.TabIndex = 6;
-            this.txtSearchEmployee.TextChanged += new System.EventHandler(this.txtSearchEmployee_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 18);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Search employee";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(560, 437);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(141, 33);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(387, 437);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(141, 33);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.OverTimeHours.DataPropertyName = "OverTimeHours";
+            this.OverTimeHours.HeaderText = "Over Time Hours";
+            this.OverTimeHours.MinimumWidth = 6;
+            this.OverTimeHours.Name = "OverTimeHours";
+            this.OverTimeHours.ReadOnly = true;
+            this.OverTimeHours.Visible = false;
+            this.OverTimeHours.Width = 125;
             // 
             // HomeForm
             // 
@@ -397,6 +410,7 @@
         private System.Windows.Forms.Button btnSalaryCalculation;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvEmployeeDataTable;
+        private System.Windows.Forms.Button btnRefreshTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeId;
         private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn MonthlySalary;
@@ -410,6 +424,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn BeginDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn NoOfLeaves;
-        private System.Windows.Forms.Button btnRefreshTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OverTimeHours;
     }
 }

@@ -22,6 +22,8 @@ namespace GrifindoToys
             btnDelete.Enabled = false;
             btnView.Enabled = false;
             btnEdit.Enabled = false;
+            btnSettings.Enabled = false;
+            btnSalaryCalculation.Enabled = false;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -41,6 +43,8 @@ namespace GrifindoToys
             btnDelete.Enabled = false;
             btnView.Enabled = false;
             btnEdit.Enabled = false;
+            btnSettings.Enabled = false;
+            btnSalaryCalculation.Enabled = false;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -61,6 +65,8 @@ namespace GrifindoToys
                     btnDelete.Enabled = false;
                     btnView.Enabled = false;
                     btnEdit.Enabled = false;
+                    btnSettings.Enabled = false;
+                    btnSalaryCalculation.Enabled = false;
 
                     MessageBox.Show("Deleted Successfully");
                 }
@@ -78,6 +84,10 @@ namespace GrifindoToys
                 btnDelete.Enabled = true;
                 btnEdit.Enabled = true;
                 btnView.Enabled = true;
+                btnSettings.Enabled = true;
+
+                if (employee.BasePayValue != null)
+                    btnSalaryCalculation.Enabled = true;
             } 
         }
 
@@ -107,6 +117,10 @@ namespace GrifindoToys
                 btnDelete.Enabled = true;
                 btnEdit.Enabled = true;
                 btnView.Enabled = true;
+                btnSettings.Enabled = true;
+
+                if (employee.BasePayValue != null)
+                    btnSalaryCalculation.Enabled = true;
             }
         }
 
@@ -118,38 +132,73 @@ namespace GrifindoToys
             dgvEmployeeDataTable.DataSource = bindingSource;
         }
 
-        private void txtSearchEmployee_TextChanged(object sender, EventArgs e)
-        {
-            //(dgvEmployeeDataTable.DataSource as DataTable).DefaultView.RowFilter = string.Format("EmployeeId = '{0}'", txtSearchEmployee.Text);
-        }
-
         private void btnSettings_Click(object sender, EventArgs e)
         {
             Settings settings = new Settings();
+            settings.EmployeeId = employee.EmployeeId;
+            settings.FullName = employee.FullName;
+            settings.MonthlySalary = (decimal)employee.MonthlySalary;
+            settings.OverTimeRatesHourly = (decimal)employee.OverTimeRatesHourly;
+            settings.Allowances = (decimal)employee.Allowances;
+            if (employee.DateRange != null)
+                settings.DateRange = (int)employee.DateRange;
+            if (employee.BeginDate != null)
+                settings.BeginDate = (DateTime)employee.BeginDate;
+            if (employee.EndDate != null)
+                settings.EndDate = (DateTime)employee.EndDate;
+            if (employee.NoOfLeaves != null)
+                settings.NoOfLeaves = (int)employee.NoOfLeaves;
             settings.ShowDialog();
         }
 
-        //private void btnSearchEmployee_Click(object sender, EventArgs e)
-        //{
-        //    string searchVal = txtSearchEmployee.Text;
-        //    dgvEmployeeDataTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        private void btnSalaryCalculation_Click(object sender, EventArgs e)
+        {
+            if (employee.NoOfLeaves != null)
+            {
+                Salary salary = new Salary();
+                salary.EmployeeId = employee.EmployeeId;
+                salary.FullName = employee.FullName;
+                salary.MonthlySalary = (decimal)employee.MonthlySalary;
+                salary.OverTimeRatesHourly = (int)employee.OverTimeRatesHourly;
+                salary.Allowances = (decimal)employee.Allowances;
+                salary.DateRange = (int)employee.DateRange;
+                salary.BeginDate = (DateTime)employee.BeginDate;
+                salary.EndDate = (DateTime)employee.EndDate;
+                salary.NoOfLeaves = (int)employee.NoOfLeaves;
+                salary.ShowDialog();
+            } 
+            else 
+            {
+                MessageBox.Show("You need to first configure the settings for this employee");
+            }
+            
+        }
 
-        //    try 
-        //    {
-        //        bool valueResult = false;
-
-        //        foreach (DataGridView row in dgvEmployeeDataTable.Rows)
-        //        {
-        //            for (int i = 0; i < row.ColumnCount; i++)
-        //            {
-        //                if (row.Cells[i])
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex) 
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            EmployeeInfo employeeInfo = new EmployeeInfo();
+            employeeInfo.EmployeeId = employee.EmployeeId;
+            employeeInfo.FullName = employee.FullName;
+            employeeInfo.MonthlySalary = (decimal)employee.MonthlySalary;
+            employeeInfo.OverTimeRatesHourly = (decimal)employee.OverTimeRatesHourly;
+            employeeInfo.Allowances = (decimal)employee.Allowances;
+            if (employee.DateRange != null)
+                employeeInfo.DateRange = (int)employee.DateRange;
+            if (employee.BeginDate != null)
+                employeeInfo.BeginDate = (DateTime)employee.BeginDate;
+            if (employee.EndDate != null)
+                employeeInfo.EndDate = (DateTime)employee.EndDate;
+            if (employee.NoOfLeaves != null)
+                employeeInfo.NoOfLeaves = (int)employee.NoOfLeaves;
+            if (employee.BasePayValue != null)
+                employeeInfo.BasePayValue = (decimal)employee.BasePayValue;
+            if (employee.NoPayValue != null)
+                employeeInfo.NoPayValue = (decimal)employee.NoPayValue;
+            if (employee.GrossPay != null)
+                employeeInfo.GrossPayValue = (decimal)employee.GrossPay;
+            if (employee.OverTimeHours != null)
+                employeeInfo.OverTimesHours = (int)employee.OverTimeHours;
+            employeeInfo.ShowDialog();
+        }
     }
 }

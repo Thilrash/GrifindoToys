@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtDateRangeSalaryCycle = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dtpSalaryBeginDate = new System.Windows.Forms.DateTimePicker();
-            this.dtmSalaryCycleEnd = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtNoEmployeeLeaves = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.dtpSalaryEndDate = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpSalaryBeginDate = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtDateRangeSalaryCycle = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.txtNoEmployeeLeaves = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +46,7 @@
             // 
             this.groupBox1.Controls.Add(this.txtNoEmployeeLeaves);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.dtmSalaryCycleEnd);
+            this.groupBox1.Controls.Add(this.dtpSalaryEndDate);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.dtpSalaryBeginDate);
             this.groupBox1.Controls.Add(this.label2);
@@ -60,46 +60,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Setting Parameters";
             // 
-            // label1
+            // label4
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Date Range for Salary Cycle";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(22, 265);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(194, 16);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "No. of Leaves for the Employee";
             // 
-            // txtDateRangeSalaryCycle
+            // dtpSalaryEndDate
             // 
-            this.txtDateRangeSalaryCycle.Location = new System.Drawing.Point(25, 80);
-            this.txtDateRangeSalaryCycle.Name = "txtDateRangeSalaryCycle";
-            this.txtDateRangeSalaryCycle.Size = new System.Drawing.Size(281, 24);
-            this.txtDateRangeSalaryCycle.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 126);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Salary Cycle Begin Date";
-            // 
-            // dtpSalaryBeginDate
-            // 
-            this.dtpSalaryBeginDate.Location = new System.Drawing.Point(25, 145);
-            this.dtpSalaryBeginDate.Name = "dtpSalaryBeginDate";
-            this.dtpSalaryBeginDate.Size = new System.Drawing.Size(281, 24);
-            this.dtpSalaryBeginDate.TabIndex = 4;
-            // 
-            // dtmSalaryCycleEnd
-            // 
-            this.dtmSalaryCycleEnd.Location = new System.Drawing.Point(25, 217);
-            this.dtmSalaryCycleEnd.Name = "dtmSalaryCycleEnd";
-            this.dtmSalaryCycleEnd.Size = new System.Drawing.Size(281, 24);
-            this.dtmSalaryCycleEnd.TabIndex = 6;
+            this.dtpSalaryEndDate.CustomFormat = "yyyy-MM-dd";
+            this.dtpSalaryEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpSalaryEndDate.Location = new System.Drawing.Point(25, 217);
+            this.dtpSalaryEndDate.Name = "dtpSalaryEndDate";
+            this.dtpSalaryEndDate.Size = new System.Drawing.Size(281, 24);
+            this.dtpSalaryEndDate.TabIndex = 6;
             // 
             // label3
             // 
@@ -111,22 +89,41 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Salary Cycle End Date";
             // 
-            // txtNoEmployeeLeaves
+            // dtpSalaryBeginDate
             // 
-            this.txtNoEmployeeLeaves.Location = new System.Drawing.Point(25, 285);
-            this.txtNoEmployeeLeaves.Name = "txtNoEmployeeLeaves";
-            this.txtNoEmployeeLeaves.Size = new System.Drawing.Size(281, 24);
-            this.txtNoEmployeeLeaves.TabIndex = 8;
+            this.dtpSalaryBeginDate.CustomFormat = "yyyy-MM-dd";
+            this.dtpSalaryBeginDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpSalaryBeginDate.Location = new System.Drawing.Point(25, 145);
+            this.dtpSalaryBeginDate.Name = "dtpSalaryBeginDate";
+            this.dtpSalaryBeginDate.Size = new System.Drawing.Size(281, 24);
+            this.dtpSalaryBeginDate.TabIndex = 4;
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 265);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 16);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "No. of Leaves for the Employee";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(22, 126);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(153, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Salary Cycle Begin Date";
+            // 
+            // txtDateRangeSalaryCycle
+            // 
+            this.txtDateRangeSalaryCycle.Location = new System.Drawing.Point(25, 80);
+            this.txtDateRangeSalaryCycle.Name = "txtDateRangeSalaryCycle";
+            this.txtDateRangeSalaryCycle.Size = new System.Drawing.Size(281, 24);
+            this.txtDateRangeSalaryCycle.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(22, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(177, 16);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Date Range for Salary Cycle";
             // 
             // btnSave
             // 
@@ -136,6 +133,7 @@
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -147,6 +145,13 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // txtNoEmployeeLeaves
+            // 
+            this.txtNoEmployeeLeaves.Location = new System.Drawing.Point(25, 284);
+            this.txtNoEmployeeLeaves.Name = "txtNoEmployeeLeaves";
+            this.txtNoEmployeeLeaves.Size = new System.Drawing.Size(281, 24);
+            this.txtNoEmployeeLeaves.TabIndex = 8;
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -157,6 +162,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Settings";
             this.Text = "Settings";
+            this.Load += new System.EventHandler(this.Settings_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -167,14 +173,14 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.DateTimePicker dtmSalaryCycleEnd;
+        private System.Windows.Forms.DateTimePicker dtpSalaryEndDate;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.DateTimePicker dtpSalaryBeginDate;
+        private System.Windows.Forms.DateTimePicker dtpSalaryBeginDate;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox txtDateRangeSalaryCycle;
-        public System.Windows.Forms.TextBox txtNoEmployeeLeaves;
+        private System.Windows.Forms.TextBox txtDateRangeSalaryCycle;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.TextBox txtNoEmployeeLeaves;
     }
 }
